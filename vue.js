@@ -1,8 +1,5 @@
 module.exports = {
-  extends: [
-    './index.js',
-    'plugin:vue/vue3-recommended',
-  ],
+  extends: ['./index.js', 'plugin:vue/vue3-recommended'],
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',

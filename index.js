@@ -118,9 +118,17 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['shims.d.ts', 'webpack.*.ts', 'vite.*.ts', 'vite-env.d.ts', 'tailwind.config.*'],
+      files: [
+        'shims.d.ts',
+        'webpack.*.ts',
+        'vite.*.ts',
+        'vite-env.d.ts',
+        'tailwind.config.*',
+        'postcss.*.{js,cjs}',
+      ],
       rules: {
         'import/no-default-export': 'off',
+        'import/no-extraneous-dependencies': 'off',
       },
     },
     {
