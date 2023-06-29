@@ -1,6 +1,6 @@
 {
   "name": "@the1812/eslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "keywords": [
     "eslint",
@@ -9,24 +9,26 @@
   "author": "Grant Howard",
   "license": "SEE LICENSE IN LICENSE.md",
   "devDependencies": {
-    "eslint": "^8.38.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.10.0"
+    "eslint-plugin-vue": "^9.10.0",
+    "prettier": "^2.8.8"
   },
   "peerDependencies": {
-    "eslint": "^8.38.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.10.0"
+    "eslint-plugin-vue": "^9.10.0",
+    "prettier": "^2.8.8"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
