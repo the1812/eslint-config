@@ -130,6 +130,7 @@ module.exports = {
         'vite-env.d.ts',
         'tailwind.config.*',
         'postcss.*.{js,cjs}',
+        'esbuild.{js,mjs}',
       ],
       rules: {
         'import/no-default-export': 'off',
