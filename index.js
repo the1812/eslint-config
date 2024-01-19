@@ -76,7 +76,6 @@ module.exports = {
       },
     ],
 
-    // 关闭和 @typescript-eslint 冲突的规则
     'no-unused-vars': 'off',
     'no-console': 'off',
     'no-undef': 'off',
@@ -131,10 +130,19 @@ module.exports = {
         'tailwind.config.*',
         'postcss.*.{js,cjs}',
         'esbuild.{js,mjs}',
+        'vitest.config.*',
       ],
       rules: {
         'import/no-default-export': 'off',
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: [
+        '*.d.*.ts',
+      ],
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
     {
