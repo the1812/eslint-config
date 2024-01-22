@@ -2,6 +2,7 @@
   "name": "@the1812/eslint-config",
   "version": "1.1.0",
   "main": "index.js",
+  "types": "index.d.ts",
   "keywords": [
     "eslint",
     "eslintconfig"
