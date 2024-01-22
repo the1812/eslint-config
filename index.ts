@@ -1,6 +1,6 @@
 import { extendNamingConvention } from './utils'
 
-export default {
+export = {
   env: {
     browser: true,
     es2022: true,
