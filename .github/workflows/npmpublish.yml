@@ -19,8 +19,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - uses: pnpm/action-setup@v2.2.4
         with:
-          version: ^8.6.5
+          version: ^8.12.1
           run_install: true
-      - run: npm publish
+      - run: pnpm build
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
