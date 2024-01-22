@@ -1,4 +1,67 @@
-module.exports = {
+export const extendNamingConvention = (
+  config: {
+    allowedPatterns?: string[]
+  } = {},
+) => {
+  const { allowedPatterns } = config
+  const patterns = allowedPatterns?.join('|')
+  const mergeFilter = (filter: { regex: string; match: boolean } | undefined, pattern?: string) => {
+    if (!filter || !pattern) {
+      return undefined
+    }
+    if (!filter) {
+      return {
+        regex: pattern,
+        match: false,
+      }
+    }
+    return {
+      regex: `${filter.match}|${pattern}`,
+      match: false,
+    }
+  }
+
+  return [
+    {
+      selector: 'property',
+      format: ['strictCamelCase', 'StrictPascalCase'],
+      filter: mergeFilter(
+        {
+          regex: '[-/]',
+          match: false,
+        },
+        patterns,
+      ),
+    },
+    {
+      selector: ['variable', 'function'],
+      format: ['strictCamelCase', 'StrictPascalCase'],
+      leadingUnderscore: 'forbid',
+      trailingUnderscore: 'forbid',
+      filter: mergeFilter(undefined, patterns),
+    },
+    {
+      selector: ['enumMember', 'typeLike'],
+      format: ['StrictPascalCase'],
+      filter: mergeFilter(undefined, patterns),
+    },
+    {
+      selector: 'default',
+      format: ['strictCamelCase'],
+      filter: mergeFilter(
+        {
+          regex: '[-/]',
+          match: false,
+        },
+        patterns,
+      ),
+      leadingUnderscore: 'forbid',
+      trailingUnderscore: 'forbid',
+    },
+  ]
+}
+
+export default {
   env: {
     browser: true,
     es2022: true,
@@ -44,37 +107,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-redeclare': 'error',
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: 'property',
-        format: ['strictCamelCase', 'StrictPascalCase'],
-        filter: {
-          regex: '[-/]',
-          match: false,
-        },
-      },
-      {
-        selector: ['variable', 'function'],
-        format: ['strictCamelCase', 'StrictPascalCase'],
-        leadingUnderscore: 'forbid',
-        trailingUnderscore: 'forbid',
-      },
-      {
-        selector: ['enumMember', 'typeLike'],
-        format: ['StrictPascalCase'],
-      },
-      {
-        selector: 'default',
-        format: ['strictCamelCase'],
-        filter: {
-          regex: '[-/]',
-          match: false,
-        },
-        leadingUnderscore: 'forbid',
-        trailingUnderscore: 'forbid',
-      },
-    ],
+    '@typescript-eslint/naming-convention': ['error', ...extendNamingConvention()],
 
     'no-unused-vars': 'off',
     'no-console': 'off',
@@ -138,9 +171,13 @@ module.exports = {
       },
     },
     {
-      files: [
-        '*.d.*.ts',
-      ],
+      files: ['*.test.*', '*.spec.*'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['*.d.*.ts'],
       rules: {
         'import/no-default-export': 'off',
       },
@@ -156,24 +193,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/naming-convention': [
           'error',
-          {
-            selector: 'property',
-            format: ['strictCamelCase', 'StrictPascalCase'],
-            filter: {
-              regex: '[-/]|^[A-Z]+$',
-              match: false,
-            },
-          },
-          {
-            selector: 'default',
-            format: ['strictCamelCase'],
-            filter: {
-              regex: '[-/]|^[A-Z]+$',
-              match: false,
-            },
-            leadingUnderscore: 'forbid',
-            trailingUnderscore: 'forbid',
-          },
+          ...extendNamingConvention({ allowedPatterns: ['^[A-Z]+$'] }),
         ],
       },
     },

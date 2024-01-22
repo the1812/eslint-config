@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ['./index.js', 'plugin:vue/vue3-recommended'],
   parser: 'vue-eslint-parser',
   parserOptions: {
