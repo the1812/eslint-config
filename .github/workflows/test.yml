@@ -5,7 +5,7 @@ on:
   push:
 
 jobs:
-  publish-npm:
+  test:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
