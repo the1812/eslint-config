@@ -6,22 +6,29 @@ export const extendNamingConvention = (
   const { allowedPatterns } = config
   const patterns = allowedPatterns?.join('|')
   const mergeFilter = (filter: { regex: string; match: boolean } | undefined, pattern?: string) => {
-    if (!filter || !pattern) {
-      return undefined
-    }
     if (!filter) {
+      if (!pattern) {
+        return undefined
+      }
       return {
         regex: pattern,
         match: false,
       }
     }
+
+    if (!pattern) {
+      return {
+        regex: `${filter.regex}`,
+        match: false,
+      }
+    }
     return {
-      regex: `${filter.match}|${pattern}`,
+      regex: `${filter.regex}|${pattern}`,
       match: false,
     }
   }
 
-  return [
+  const result = [
     {
       selector: 'property',
       format: ['strictCamelCase', 'StrictPascalCase'],
@@ -59,4 +66,12 @@ export const extendNamingConvention = (
       trailingUnderscore: 'forbid',
     },
   ]
+  result.forEach((item: Record<string, any>) => {
+    Object.keys(item).forEach(key => {
+      if (item[key] === undefined) {
+        delete item[key]
+      }
+    })
+  })
+  return result
 }
