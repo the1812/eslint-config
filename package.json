@@ -1,6 +1,6 @@
 {
   "name": "@the1812/eslint-config",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "main": "index.js",
   "types": "index.d.ts",
   "keywords": [
@@ -11,7 +11,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.13.0",

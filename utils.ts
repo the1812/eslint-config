@@ -1,3 +1,46 @@
+export interface NamingConventionConfig {
+  format:
+  | (
+    | 'camelCase'
+    | 'strictCamelCase'
+    | 'PascalCase'
+    | 'StrictPascalCase'
+    | 'snake_case'
+    | 'UPPER_CASE'
+  )[]
+  | null
+  custom?: {
+    regex: string
+    match: boolean
+  }
+  leadingUnderscore?:
+  | 'forbid'
+  | 'require'
+  | 'requireDouble'
+  | 'allow'
+  | 'allowDouble'
+  | 'allowSingleOrDouble'
+  trailingUnderscore?:
+  | 'forbid'
+  | 'require'
+  | 'requireDouble'
+  | 'allow'
+  | 'allowDouble'
+  | 'allowSingleOrDouble'
+  prefix?: string[]
+  suffix?: string[]
+  selector: string | string[]
+  filter?:
+  | string
+  | {
+    regex: string
+    match: boolean
+  }
+  modifiers?: string[]
+  types?: string[]
+  [key: string]: unknown | undefined
+}
+
 export const extendNamingConvention = (
   config: {
     allowedPatterns?: string[]
@@ -28,7 +71,7 @@ export const extendNamingConvention = (
     }
   }
 
-  const result = [
+  const result: NamingConventionConfig[] = [
     {
       selector: 'property',
       format: ['strictCamelCase', 'StrictPascalCase'],
@@ -66,7 +109,7 @@ export const extendNamingConvention = (
       trailingUnderscore: 'forbid',
     },
   ]
-  result.forEach((item: Record<string, any>) => {
+  result.forEach((item) => {
     Object.keys(item).forEach(key => {
       if (item[key] === undefined) {
         delete item[key]
