@@ -3,6 +3,7 @@
     "camelcase",
     "eslintconfig",
     "linebreak",
+    "Parens",
     "peerdeps",
     "plusplus",
     "pnpx"
