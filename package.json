@@ -7,6 +7,10 @@
     "eslint",
     "eslintconfig"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the1812/eslint-config.git"
+  },
   "author": "Grant Howard",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
