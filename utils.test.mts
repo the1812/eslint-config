@@ -6,7 +6,7 @@ describe('extendNamingConvention', () => {
     const actual = extendNamingConvention()
     const expected = [
       {
-        selector: 'property',
+        selector: ['import', 'property'],
         format: ['strictCamelCase', 'StrictPascalCase'],
         filter: {
           regex: '[-/]',
@@ -42,7 +42,7 @@ describe('extendNamingConvention', () => {
     })
     const expected = [
       {
-        selector: 'property',
+        selector: ['import', 'property'],
         format: ['strictCamelCase', 'StrictPascalCase'],
         filter: {
           regex: '[-/]|test',
@@ -86,7 +86,7 @@ describe('extendNamingConvention', () => {
     })
     const expected = [
       {
-        selector: 'property',
+        selector: ['import', 'property'],
         format: ['strictCamelCase', 'StrictPascalCase'],
         filter: {
           regex: '[-/]|test1|test2',
