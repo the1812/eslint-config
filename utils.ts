@@ -73,7 +73,7 @@ export const extendNamingConvention = (
 
   const result: NamingConventionConfig[] = [
     {
-      selector: 'property',
+      selector: ['import', 'property'],
       format: ['strictCamelCase', 'StrictPascalCase'],
       filter: mergeFilter(
         {
