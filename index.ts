@@ -103,6 +103,7 @@ export = {
         'postcss.*.{js,cjs}',
         'esbuild.{js,mjs}',
         'vitest.config.*',
+        'vitest.workspace.*',
       ],
       rules: {
         'import/no-default-export': 'off',
