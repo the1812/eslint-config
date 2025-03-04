@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { extendNamingConvention } from './utils'
+import { extendNamingConvention } from './utils.js'
 
 describe('extendNamingConvention', () => {
   test('default patterns', () => {

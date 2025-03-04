@@ -1,0 +1,10 @@
+import config from './dist/index.js'
+
+export default [
+  ...config,
+  {
+    rules: {
+      'import/no-default-export': 'off',
+    },
+  },
+]

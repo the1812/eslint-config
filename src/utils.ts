@@ -1,44 +1,44 @@
 export interface NamingConventionConfig {
   format:
-  | (
-    | 'camelCase'
-    | 'strictCamelCase'
-    | 'PascalCase'
-    | 'StrictPascalCase'
-    | 'snake_case'
-    | 'UPPER_CASE'
-  )[]
-  | null
+    | (
+        | 'camelCase'
+        | 'strictCamelCase'
+        | 'PascalCase'
+        | 'StrictPascalCase'
+        | 'snake_case'
+        | 'UPPER_CASE'
+      )[]
+    | null
   custom?: {
     regex: string
     match: boolean
   }
   leadingUnderscore?:
-  | 'forbid'
-  | 'require'
-  | 'requireDouble'
-  | 'allow'
-  | 'allowDouble'
-  | 'allowSingleOrDouble'
+    | 'forbid'
+    | 'require'
+    | 'requireDouble'
+    | 'allow'
+    | 'allowDouble'
+    | 'allowSingleOrDouble'
   trailingUnderscore?:
-  | 'forbid'
-  | 'require'
-  | 'requireDouble'
-  | 'allow'
-  | 'allowDouble'
-  | 'allowSingleOrDouble'
+    | 'forbid'
+    | 'require'
+    | 'requireDouble'
+    | 'allow'
+    | 'allowDouble'
+    | 'allowSingleOrDouble'
   prefix?: string[]
   suffix?: string[]
   selector: string | string[]
   filter?:
-  | string
-  | {
-    regex: string
-    match: boolean
-  }
+    | string
+    | {
+        regex: string
+        match: boolean
+      }
   modifiers?: string[]
   types?: string[]
-  [key: string]: unknown | undefined
+  [key: string]: unknown
 }
 
 export const extendNamingConvention = (
@@ -61,7 +61,7 @@ export const extendNamingConvention = (
 
     if (!pattern) {
       return {
-        regex: `${filter.regex}`,
+        regex: filter.regex,
         match: false,
       }
     }
@@ -109,7 +109,7 @@ export const extendNamingConvention = (
       trailingUnderscore: 'forbid',
     },
   ]
-  result.forEach((item) => {
+  result.forEach(item => {
     Object.keys(item).forEach(key => {
       if (item[key] === undefined) {
         delete item[key]
