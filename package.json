@@ -6,6 +6,7 @@
   "exports": {
     ".": "./dist/index.js",
     "./utils": "./dist/utils.js",
+    "./prettier": "./dist/prettier.js",
     "./vue": "./dist/vue.js"
   },
   "keywords": [
@@ -48,9 +49,11 @@
     "eslint-plugin-vue": "9.32.0",
     "prettier": "3.5.3",
     "typescript": "5.8.2",
-    "typescript-eslint": "8.26.0"
+    "typescript-eslint": "8.26.0",
+    "vue-eslint-parser": "9.4.3"
   },
   "devDependencies": {
+    "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "22",
     "vite": "6.2.0",
     "vitest": "3.0.7"

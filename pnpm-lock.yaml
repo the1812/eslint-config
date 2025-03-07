@@ -44,7 +44,13 @@ importers:
       typescript-eslint:
         specifier: 8.26.0
         version: 8.26.0(eslint@9.21.0)(typescript@5.8.2)
+      vue-eslint-parser:
+        specifier: 9.4.3
+        version: 9.4.3(eslint@9.21.0)
     devDependencies:
+      '@types/eslint-config-prettier':
+        specifier: 6.11.3
+        version: 6.11.3
       '@types/node':
         specifier: '22'
         version: 22.13.9
@@ -381,6 +387,9 @@ packages:
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+
+  '@types/eslint-config-prettier@6.11.3':
+    resolution: {integrity: sha512-3wXCiM8croUnhg9LdtZUJQwNcQYGWxxdOWDjPe1ykCqJFPVpzAKfs/2dgSoCtAvdPeaponcWPI7mPcGGp9dkKQ==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -1811,6 +1820,8 @@ snapshots:
     optional: true
 
   '@rtsao/scc@1.1.0': {}
+
+  '@types/eslint-config-prettier@6.11.3': {}
 
   '@types/estree@1.0.6': {}
 

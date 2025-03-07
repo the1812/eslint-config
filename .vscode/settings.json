@@ -7,5 +7,8 @@
     "peerdeps",
     "plusplus",
     "pnpx"
-  ]
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 }
