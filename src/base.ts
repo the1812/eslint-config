@@ -32,7 +32,11 @@ export const baseConfigs = tseslint.config(
     ignores: ['dist/', 'node_modules/', '.vercel/'],
   },
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{js,cjs,mjs,jsx}'],
+    extends: [tseslint.configs.disableTypeChecked],
+  },
+  {
+    files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
     rules: {
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off',
