@@ -17,9 +17,6 @@ importers:
       '@typescript-eslint/utils':
         specifier: 8.26.0
         version: 8.26.0(eslint@9.21.0)(typescript@5.8.2)
-      eslint:
-        specifier: 9.21.0
-        version: 9.21.0
       eslint-config-prettier:
         specifier: 10.0.2
         version: 10.0.2(eslint@9.21.0)
@@ -35,12 +32,6 @@ importers:
       eslint-plugin-vue:
         specifier: 9.32.0
         version: 9.32.0(eslint@9.21.0)
-      prettier:
-        specifier: 3.5.3
-        version: 3.5.3
-      typescript:
-        specifier: 5.8.2
-        version: 5.8.2
       typescript-eslint:
         specifier: 8.26.0
         version: 8.26.0(eslint@9.21.0)(typescript@5.8.2)
@@ -54,6 +45,15 @@ importers:
       '@types/node':
         specifier: '22'
         version: 22.13.9
+      eslint:
+        specifier: 9.21.0
+        version: 9.21.0
+      prettier:
+        specifier: 3.5.3
+        version: 3.5.3
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
       vite:
         specifier: 6.2.0
         version: 6.2.0(@types/node@22.13.9)
