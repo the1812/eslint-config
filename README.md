@@ -8,10 +8,10 @@
 
 ```powershell
 # ✔️
-eslint . --ext .ts,.vue
+eslint .
 
 # ❌
-eslint . --ext .ts,.vue
+eslint .
 prettier . --write
 ```
 
