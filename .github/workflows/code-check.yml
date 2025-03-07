@@ -1,4 +1,4 @@
-name: Test
+name: Code Check
 
 on:
   workflow_dispatch:
@@ -18,3 +18,16 @@ jobs:
         with:
           run_install: true
       - run: pnpm test
+  lint:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+      - run: pnpm build
+      - run: pnpm lint
