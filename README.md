@@ -117,14 +117,8 @@ for (let i = 0; i < items.length; i+=1)
 
 ## 安装
 
-需要安装包本身和所有的 peerDependencies.
 ```powershell
-pnpm install -D eslint @the1812/eslint-config @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-base eslint-config-prettier eslint-plugin-import eslint-plugin-prettier eslint-plugin-vue
-```
-
-也可以使用 [install-peerdeps](https://www.npmjs.com/package/install-peerdeps) 来简化命令.
-```powershell
-pnpx install-peerdeps @the1812/eslint-config -D -P
+pnpm install -D eslint prettier typescript @the1812/eslint-config
 ```
 
 ## 配置
@@ -133,18 +127,14 @@ pnpx install-peerdeps @the1812/eslint-config -D -P
 
 ### 适用于 JavaScript 或 TypeScript 项目
 ```JavaScript
-// .eslintrc.cjs
-module.exports = {
-  extends: ['@the1812/eslint-config'],
-  // ...
-}
+import config from '@the1812/eslint-config'
+
+export default config
 ```
 
 ### 适用于 Vue 3 项目
 ```JavaScript
-// .eslintrc.cjs
-module.exports = {
-  extends: ['@the1812/eslint-config/vue'],
-  // ...
-}
+import config from '@the1812/eslint-config/vue'
+
+export default config
 ```
