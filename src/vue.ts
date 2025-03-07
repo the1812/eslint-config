@@ -32,7 +32,6 @@ export default [
       parserOptions: {
         projectService: true,
         parser: tseslint.parser,
-        tsconfigRootDir: import.meta.dirname,
         extraFileExtensions,
       },
     },

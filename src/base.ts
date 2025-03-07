@@ -16,7 +16,6 @@ export const baseConfigs = tseslint.config(
       parserOptions: {
         extraFileExtensions,
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
@@ -34,9 +33,11 @@ export const baseConfigs = tseslint.config(
   {
     files: ['**/*.{js,cjs,mjs,jsx}'],
     extends: [tseslint.configs.disableTypeChecked],
+    rules: {
+      '@typescript-eslint/prefer-destructuring': 'off',
+    },
   },
   {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
     rules: {
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off',
@@ -64,6 +65,7 @@ export const baseConfigs = tseslint.config(
     },
   },
   {
+    ignores: ['**/*.{js,cjs,mjs,jsx}'],
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'error',
